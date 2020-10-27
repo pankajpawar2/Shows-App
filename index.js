@@ -4,6 +4,10 @@ const cors = require('cors');
 app.use(express.json());
 app.use(cors());
 
+app.get('/',(req,res)=> {
+  res.send('<h1>Welcome to the Shows App</h1>')
+})
+
 app.post('/',(req,res)=>{
 
   const {payload} = req.body;
