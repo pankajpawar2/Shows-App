@@ -3,6 +3,7 @@ const app = express();
 const cors = require('cors');
 app.use(express.json());
 app.use(cors());
+const PORT = process.env.PORT||3000;
 
 app.get('/',(req,res)=> {
   res.send('<h1>Welcome to the Shows App</h1>')
@@ -28,4 +29,4 @@ app.post('/',(req,res)=>{
       }
   
 })
-app.listen(process.env.PORT||3000,()=>console.log('Listening on Port 3000'));
+app.listen(PORT,()=>console.log(`Listening on Port: ${PORT}`));
