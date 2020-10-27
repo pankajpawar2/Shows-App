@@ -25,7 +25,8 @@ app.post('/',(req,res)=>{
       }
   else
       {
-        res.set('Content-Type','application/json').status(400).send({error:'Could not decode request: JSON parsing failed'})
+        res.set('Content-Type', 'application/json')
+        res.status(400).send({error:'Could not decode request: JSON parsing failed'})
       }
   
 })
