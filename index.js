@@ -12,7 +12,7 @@ app.get('/',(req,res)=> {
 app.post('/',(req,res)=>{
 
   const {payload} = req.body;
-
+  
   if (payload)
       {
         const filteredShows = payload.filter(show=>{
@@ -25,7 +25,7 @@ app.post('/',(req,res)=>{
       }
   else
       {
-        res.status(400).send({error:'Could not decode request: JSON parsing failed'})
+        res.set('Content-Type','application/json').status(400).send({error:'Could not decode request: JSON parsing failed'})
       }
   
 })
